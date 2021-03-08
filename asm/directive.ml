@@ -1,4 +1,4 @@
-type register = Rax | R8 | R9 | R10 | R11 | Rsp | Rdi | Rsi | Rdx | Rbp
+type register = Rax | R8 | R9 | R10 | R11 | Rsp | Rdi | Rsi | Rdx | Rcx | Rbp
 
 let string_of_register ?(byte = false) (reg : register) =
   match (reg, byte) with
@@ -38,6 +38,10 @@ let string_of_register ?(byte = false) (reg : register) =
       "rdx"
   | Rdx, true ->
       "rdx"
+  | Rcx, false ->
+      "rcx"
+  | Rcx, true ->
+      "rcx"
   | Rbp, false ->
       "rbp"
   | Rbp, true ->
